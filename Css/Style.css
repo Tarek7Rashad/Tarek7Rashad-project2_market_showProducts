@@ -1,0 +1,1104 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  perspective: 700px;
+}
+body {
+  background-color: #dad5d4;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  transform-style: preserve-3d;
+}
+header {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  align-items: center;
+  background-color: #dad5d4;
+  position: relative;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 0px 2px;
+  font-weight: bold;
+  font-size: 16px;
+  position: relative;
+}
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+nav ul li.dropdown-parent .dropdown {
+  display: none;
+  width: 330px;
+  height: auto;
+  box-shadow: 1px 2px 20px black;
+  border-radius: 20px;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: rgba(203, 202, 202, 0.944);
+  transition: all 1s;
+}
+nav ul li.dropdown-parent:hover .dropdown {
+  display: flex;
+  transition: all 1s;
+}
+.dropdown-parent .dropdown {
+  display: grid;
+  grid-template-columns: repeat(1fr, 100%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.dropdown-parent .dropdown .pages,
+.blogs {
+  padding: 30px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.dropdown-parent .dropdown .blogHeader,
+.pagesHeader {
+  font-size: 14px;
+  font-weight: lighter;
+}
+.dropdown-parent .dropdown p {
+  font-size: 16px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  line-height: 30px;
+  transition: all 0.1s;
+}
+.dropdown-parent .dropdown p:hover {
+  transform: scale(1.1);
+  color: red;
+  transition: all 0.1s;
+}
+.marketLogo {
+  width: 50px;
+  height: 50px;
+  border: 2px solid red;
+  background-color: red;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-right: 10px;
+}
+.logoText {
+  font-size: 24px;
+  font-weight: lighter;
+}
+.logoText b {
+  font-weight: 900;
+}
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0px;
+  top: -1px;
+  left: -1px;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid red;
+  border-top: 2px solid red;
+}
+nav ul li a:hover:after {
+  left: -1px;
+  width: calc(100% + 2px);
+}
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 100%;
+  top: -1px;
+  left: -1px;
+  transition: all 0.3s ease;
+  border-left: 2px solid red;
+  border-right: 2px solid red;
+}
+nav ul li a:hover::before {
+  top: -1px;
+  height: calc(100% + 2px);
+}
+nav ul li a:hover {
+  color: red;
+}
+
+.iconList li a {
+  margin-right: 10px;
+  color: black;
+}
+.iconList li a .car {
+  position: relative;
+}
+.iconList li a .car > div {
+  width: 17px;
+  height: 17px;
+  color: white;
+  border-radius: 100px;
+  background-color: red;
+  position: absolute;
+  font-size: 12px;
+  top: -15px;
+  right: -1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.iconList li a:hover {
+  color: red;
+}
+.iconList li a .car:hover div {
+  top: -18px;
+  transition: 0.4s;
+}
+.panner {
+  width: 100%;
+  background-color: black;
+  color: #dad5d4;
+  text-align: center;
+  font-size: 14px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: -10;
+}
+.panner span {
+  text-decoration: underline;
+  color: burlywood;
+  font-weight: bold;
+  position: absolute;
+  width: 22%;
+}
+.panner span:hover {
+  letter-spacing: 1px;
+  transition: all 0.4s;
+}
+.section1-container,
+.section2-container,
+.section3-container,
+.section4-container,
+.section5-container,
+.section6-container,
+.section7-container {
+  height: 100vh;
+  margin-bottom: -120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  z-index: -10;
+}
+.section1-container .image img {
+  width: 50vw;
+  height: 100vh;
+}
+.section1-container .section1-text {
+  width: 500px;
+  text-align: center;
+  line-height: 70px;
+  margin-left: 10%;
+}
+.section1-container .section1-text h1 {
+  font-size: 40px;
+  color: red;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.section1-container .section1-text h3 {
+  font-size: 50px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+  font-weight: bold;
+}
+.section1-container .section1-text p {
+  font-size: 18px;
+  line-height: 20px;
+  padding: 20px 0px;
+  color: gray;
+  opacity: 0.7px;
+  text-transform: capitalize;
+  /* font-family: cursive; */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.section1-container .section1-text .shopNow {
+  width: 180px;
+  height: 70px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  transition: all 1s;
+}
+.section1-container .section1-text .shopNow:hover {
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+  font-weight: 500;
+  transition: all 0.1s;
+  cursor: pointer;
+}
+/**************************************************************/
+
+.section2-container .div1-section2,
+.div2-section2,
+.div3-section2 {
+  width: 370px;
+  height: 470px;
+  background-size: cover;
+  position: relative;
+}
+.section2-container .div1-section2 {
+  background-image: url(../Css/images/men\ fashion.jpg);
+}
+.section2-container .div2-section2 {
+  background-image: url(../Css/images/women\ fashion.jpg);
+}
+.section2-container .div3-section2 {
+  background-image: url(../Css/images/baby.jpg);
+}
+.section2-container .overlay {
+  overflow: hidden;
+}
+.section2-container .overlay .section2-h1,
+.section2-p,
+.section2-text {
+  color: white;
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-weight: 900;
+  top: 0;
+  left: 0;
+}
+.section2-container .overlay .section2-text .section2-h1 {
+  color: white;
+  padding-top: 115%;
+  transition: all 1s;
+}
+.section2-container .overlay:hover .section2-text .section2-h1 {
+  padding-top: 100%;
+  transition: all 1s;
+}
+.section2-container .overlay .section2-text .section2-p {
+  color: burlywood;
+  padding-top: 125%;
+  opacity: 0;
+  transition: all 1s;
+}
+
+.section2-container .overlay .section2-p {
+  position: absolute;
+  font-size: 18px;
+  color: burlywood;
+  padding-top: 110%;
+  transition: all 1s;
+  font-weight: 900;
+}
+.section2-container .overlay:hover .section2-text .section2-p {
+  color: burlywood;
+  padding-top: 112%;
+  opacity: 1;
+}
+.section2-container .overlay .section2-p::after {
+  content: "";
+  position: absolute;
+  height: 1.5px;
+  width: 80px;
+  background-color: burlywood;
+  margin: auto;
+  bottom: -25px;
+  left: 144px;
+  transition: all 1s;
+}
+.section2-container .overlay:hover .section2-p::after {
+  bottom: 25px;
+}
+.section2-container .overlay:hover .div1-section2,
+.section2-container .overlay:hover .div2-section2,
+.section2-container .overlay:hover .div3-section2 {
+  transform: scale(1.2);
+  transition: transform 1s ease;
+}
+.section2-container .overlay::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-linear-gradient(
+    bottom,
+    black 3%,
+    rgba(255, 255, 255, 0) 140px
+  );
+}
+/*********************************************/
+.section3-container {
+  flex-direction: column;
+  margin-top: 100px;
+}
+.section3-container .cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 80%;
+  width: 89.5%;
+  margin: 0px 10px;
+}
+.section3-container .section3-heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 85%;
+  height: 20%;
+}
+.section3-container .section3-heading h1 {
+  font-size: 40px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.section3-container .section3-heading ul li a {
+  font-size: 22px;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
+  position: relative;
+}
+.section3-container .section3-heading:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  top: 40%;
+}
+.section3-container .section3-heading .section3-ul li .redWord {
+  color: red;
+  position: relative;
+}
+.section3-container .section3-heading .section3-ul li .redWord::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  left: 0;
+  align-items: center;
+  bottom: -155%;
+  position: absolute;
+  background-color: red;
+}
+.section3-container .card1-section3,
+.card2-section3,
+.card3-section3,
+.card4-section3 {
+  width: 350px;
+  height: 400px;
+  background-size: cover;
+  position: relative;
+  margin: auto;
+  z-index: -10;
+}
+.section3-container .card1-section3 {
+  background-image: url(images/backImage1.jpg);
+  background-size: cover;
+}
+.section3-container .card2-section3 {
+  background-image: url(images/backImage3.jpg);
+  background-size: cover;
+}
+.section3-container .card3-section3 {
+  background-image: url(images/backImage2.avif);
+  background-size: cover;
+}
+.section3-container .card4-section3 {
+  background-image: url(images/backImage4.avif);
+  background-size: cover;
+}
+.section3-container .card1-back,
+.card2-back,
+.card3-back,
+.card4-back {
+  position: absolute;
+  background-image: url(images/person2.avif);
+  background-size: cover;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  transition: all 1s;
+  transform: rotateY(90deg);
+  opacity: 0;
+}
+.section3-container .section3-parent1:hover .card1-back {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+.section3-container .section3-parent2:hover .card2-back {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+.section3-container .section3-parent3:hover .card3-back {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+.section3-container .section3-parent4:hover .card4-back {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+.section3-h1,
+.section3-p {
+  margin-top: 20px;
+  line-height: 25px;
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: lighter;
+  font-size: 22px;
+}
+.section3-p {
+  font-size: 18px;
+}
+
+.section3-container .section3-card1-content:hover .section3-text .section3-h1,
+.section3-card2-content:hover .section3-text .section3-h1,
+.section3-card3-content:hover .section3-text .section3-h1,
+.section3-card4-content:hover .section3-text .section3-h1 {
+  color: red;
+  transition: all 0.7s;
+}
+.section3-container .next a i,
+.back a i {
+  font-size: 32px;
+  align-content: center;
+  height: 400px;
+  color: black;
+}
+.section3-container .cards .options {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: -20px;
+  width: 180px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.468);
+  opacity: 0;
+  z-index: 10;
+  transition: all 1s;
+}
+.section3-container .cards .options ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.section3-container .cards .options ul li {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 101%;
+  width: 100%;
+}
+.section3-container .cards .options ul li a {
+  font-size: 22px;
+  color: black;
+  margin: auto 10px;
+}
+
+.section3-container .cards .options ul li:hover {
+  background-color: red;
+  transition: all 1s;
+}
+.section3-container .section3-parent4:hover .options,
+.section3-parent3:hover .options,
+.section3-parent2:hover .options,
+.section3-parent1:hover .options {
+  bottom: 30px;
+  opacity: 1;
+  position: absolute;
+  z-index: 10;
+}
+/*******************************************/
+.section4-container {
+  margin-top: -150px;
+}
+.section4-container .section4-content {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0px 20%;
+  background-color: #cedad8;
+  text-align: center;
+  box-shadow: 0px 1px 3px #000, 0px -1px 3px #000;
+}
+.section4-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.section4-image-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+}
+.section4-container .next a i,
+.back a i {
+  font-size: 32px;
+  align-content: center;
+  height: 100%;
+  color: black;
+}
+.section4-container .next a i,
+.back a i {
+  font-size: 32px;
+  align-content: center;
+  height: 100%;
+  color: black;
+}
+.section4-container .section4-content .section4-image-text img {
+  width: 120px;
+  height: 120px;
+  border-radius: 1000px;
+}
+.section4-container .section4-h1,
+.section4-p {
+  font-size: 40px;
+  color: black;
+  font-weight: 700;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.section4-container .section4-p {
+  font-size: 28px;
+  color: rgba(53, 52, 52, 0.689);
+  width: 80%;
+  line-height: 40px;
+  font-weight: 200;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.section4-container .section4-image-text .text {
+  width: 160px;
+  text-align: start;
+  line-height: 30px;
+}
+.section4-container .section4-image-text .text p {
+  color: rgba(53, 52, 52, 0.689);
+}
+/**************************************/
+.section5-container {
+  flex-direction: column;
+  margin-top: 50px;
+}
+.section5-container .section5-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 80%;
+  width: 89.5%;
+  margin: 0px 10px;
+}
+.section5-container .section5-heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  width: 85%;
+  height: 20%;
+  margin: 0px 190px;
+}
+.section5-container .section5-heading h1 {
+  font-size: 40px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.section5-container .card1-section5,
+.card2-section5,
+.card3-section5,
+.card4-section5 {
+  width: 350px;
+  height: 400px;
+  background-size: cover;
+  position: relative;
+  margin: auto;
+  z-index: -10;
+  overflow: hidden;
+}
+.section5-container .card1-section5 {
+  background-image: url(images/makeupimage1.jpeg);
+  background-size: cover;
+}
+.section5-container .card2-section5 {
+  background-image: url(images/makeupimage2.jpg);
+  background-size: cover;
+}
+.section5-container .card3-section5 {
+  background-image: url(images/shoes.jpg);
+  background-size: cover;
+}
+.section5-container .card4-section5 {
+  background-image: url(images/bag.webp);
+  background-size: cover;
+}
+.section5-container .section5-card1-back,
+.section5-card2-back,
+.section5-card3-back,
+.section5-card4-back {
+  position: absolute;
+  background-image: url(images/watch2.jpg);
+  background-size: cover;
+  left: 0;
+  right: 0;
+  top: -100%;
+  height: 100%;
+  width: 100%;
+  transition: all 1s;
+  opacity: 0;
+}
+.section5-container .section5-parent1:hover .section5-card1-back {
+  opacity: 1;
+  top: 0;
+}
+.section5-container .section5-parent2:hover .section5-card2-back {
+  opacity: 1;
+  top: 0;
+}
+.section5-container .section5-parent3:hover .section5-card3-back {
+  opacity: 1;
+  top: 0;
+}
+.section5-container .section5-parent4:hover .section5-card4-back {
+  opacity: 1;
+  top: 0;
+}
+
+.section5-h1,
+.section5-p {
+  margin-top: 20px;
+  line-height: 25px;
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: lighter;
+  font-size: 22px;
+}
+.section5-p {
+  font-size: 18px;
+}
+
+.section5-container .section5-card1-content:hover .section5-text .section5-h1,
+.section5-card2-content:hover .section5-text .section5-h1,
+.section5-card3-content:hover .section5-text .section5-h1,
+.section5-card4-content:hover .section5-text .section5-h1 {
+  color: red;
+  transition: all 0.7s;
+}
+.section5-container .next a i,
+.back a i {
+  font-size: 32px;
+  align-content: center;
+  height: 400px;
+  color: black;
+}
+.section5-container .section5-cards .section5-options {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: -20px;
+  width: 180px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.468);
+  opacity: 0;
+  z-index: 10;
+  transition: all 1s;
+}
+.section5-container .section5-cards .section5-options ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.section5-container .section5-cards .section5-options ul li {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 101%;
+  width: 100%;
+}
+.section5-container .section5-cards .section5-options ul li a {
+  font-size: 22px;
+  color: black;
+  margin: auto 10px;
+}
+.section5-container .section5-cards .section5-options ul li:hover {
+  background-color: red;
+  transition: all 1s;
+}
+.section5-container .section5-parent4:hover .section5-options,
+.section5-parent3:hover .section5-options,
+.section5-parent2:hover .section5-options,
+.section5-parent1:hover .section5-options {
+  bottom: 30px;
+  opacity: 1;
+  position: absolute;
+  z-index: 10;
+}
+/******************************************/
+.section6-container {
+  height: 150vh;
+  flex-direction: column;
+}
+.section6-container .section6-content {
+  width: 100%;
+  margin-top: 100px;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #cedad8;
+  align-items: center;
+  box-shadow: 0px 1px 3px #000, 0px -1px 3px #000;
+}
+.section6-container .section6-card1-content:hover .section6-h3,
+.section6-card2-content:hover .section6-h3,
+.section6-card3-content:hover .section6-h3 {
+  color: red;
+  transition: all 0.5s;
+}
+.section6-container .section6-image-content {
+  width: 100%;
+  height: 100%;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.section6-container .section6-heading {
+  font-size: 40px;
+  padding-top: 20px;
+  color: black;
+  font-weight: 700;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.section6-container .card1-section6,
+.card2-section6,
+.card3-section6 {
+  width: 450px;
+  height: 420px;
+  background-size: cover;
+  position: relative;
+  transition: transform 0.5s ease;
+}
+.section6-container .card1-section6:hover,
+.card2-section6:hover,
+.card3-section6:hover {
+  transform: scale(1.03);
+}
+.section6-container .card1-section6 {
+  background-image: url(images/makeupimage1.jpeg);
+  background-size: cover;
+}
+.section6-container .card2-section6 {
+  background-image: url(images/backImage3.jpg);
+  background-size: cover;
+}
+.section6-container .card3-section6 {
+  background-image: url(images/bag.webp);
+  background-size: cover;
+}
+.section6-container .section6-h1,
+.section6-p {
+  font-size: 16px;
+  color: black;
+  font-weight: 700;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.section6-container .section6-p1,
+.section6-p2 {
+  font-size: 18px;
+  color: rgba(53, 52, 52, 0.689);
+  font-weight: 200;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.section6-container .section6-p2 {
+  font-size: 22px;
+  width: 450px;
+}
+.section6-container .section6-h3 {
+  font-size: 24px;
+  color: black;
+  font-weight: 800;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.section6-container .section6-p1 {
+  padding-top: 20px;
+}
+.section6-container .section6-p1,
+.section6-p2,
+.section6-h3,
+.section6-readMore {
+  line-height: 40px;
+}
+.section6-readMore {
+  font-size: 18px;
+  font-weight: 900;
+  text-decoration: underline;
+  transition: all 0.5s;
+  display: inline-block;
+}
+.section6-readMore:hover {
+  transform: scale(1.1);
+}
+.section6-container .section6-icons-content {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  line-height: 35px;
+}
+.section6-container .section6-icon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section6-icon .icon {
+  height: 50px;
+  width: 60px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section6-icon .icon i {
+  font-size: 50px;
+  position: absolute;
+  transition: all 0.1s;
+}
+.section6-icon .icon .icon1 {
+  color: rgb(145, 145, 144);
+}
+
+.section6-icon .icon .icon2 {
+  color: #03013e;
+  transform: translateY(100%);
+}
+
+.section6-icon .icon:hover .icon1 {
+  transform: translateY(-100%);
+}
+
+.section6-icon .icon:hover .icon2 {
+  transform: translateY(0%);
+}
+.section6-icon .section6-icon-text1,
+.section6-icon-text2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.section6-icon .section6-icon-text1 {
+  font-weight: bolder;
+  font-size: 18px;
+}
+/************************************************/
+.section7-container {
+  height: 77vh;
+  margin-top: 150px;
+  background-color: black;
+  display: grid;
+  grid-template-rows: 1fr 4fr 1fr;
+  grid-template-columns: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.section7-container .subscribe-partition,
+.links-partition,
+.copyright-footer-partition {
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.section7-container .subscribe-partition::after,
+.links-partition::after {
+  content: "";
+  position: absolute;
+  height: 0.08px;
+  background-color: rgba(255, 255, 255, 0.147);
+  width: 100%;
+  bottom: -10%;
+}
+.links-partition::after {
+  content: "";
+  bottom: -15%;
+}
+.section7-container .subscribe-partition {
+  display: grid;
+  grid-template-columns: 2fr 4fr 0.5fr;
+}
+.section7-container .subscribe-partition .subscribe .sub-h3,
+.sub-p {
+  color: white;
+  line-height: 50px;
+}
+.section7-container .subscribe-partition .subscribe h3 {
+  font-size: 24px;
+  font-weight: 900;
+}
+.subscribe-partition .email input,
+button {
+  width: 50%;
+  height: 50px;
+}
+.subscribe-partition .email button {
+  width: 15%;
+  font-size: 22px;
+  background-color: red;
+  transition: all 0.5s;
+  color: white;
+  margin-left: 1px;
+}
+.subscribe-partition .socialMedia li a {
+  font-size: 24px;
+  color: rgba(3, 115, 132, 0.449);
+  margin-right: 5px;
+  transition: all 0.5s;
+}
+.subscribe-partition button:hover,
+.socialMedia li a:hover {
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+.subscribe-partition .socialMedia li a:hover {
+  color: white;
+  transition: all 0.5s;
+}
+/********************* end subscribe part ***************/
+
+.links-partition {
+  align-items: flex-start;
+}
+.links-partition .line-height {
+  line-height: 35px;
+}
+.links-partition .line-height h4 {
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+.links-partition .line-height p {
+  font-size: 14px;
+  color: rgb(145, 145, 144);
+  transition: all 0.5s;
+}
+.section7-container .links-partition .color {
+  color: white;
+}
+.links-partition .line-height p:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
+}
+/********************* end links part ***************/
+.copyright-footer-partition {
+  justify-content: center;
+}
+.copyright-footer-partition p {
+  color: rgb(145, 145, 144);
+}
+.copyright-footer-partition span i {
+  animation-name: change;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  font-size: 22px;
+  display: inline-block;
+  color: red;
+}
+@keyframes change {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(0);
+  }
+}
+/******************** end copyright part ****************/
+.footer-logo {
+  display: flex;
+  align-items: center;
+}
+.footer-marketLogo {
+  width: 50px;
+  height: 50px;
+  border: 2px solid red;
+  background-color: red;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-right: 10px;
+}
+.footer-logoText {
+  font-size: 24px;
+  color: white;
+  font-weight: lighter;
+}
+.footer-logoText b {
+  font-weight: 900;
+}
+/********** end footer part *******************/
+/************* end section7 ****************/
